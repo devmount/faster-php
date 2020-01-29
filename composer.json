@@ -1,0 +1,5 @@
+{
+    "require": {
+        "bvanhoekelen/performance": "^2.5"
+    }
+}
