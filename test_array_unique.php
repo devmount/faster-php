@@ -30,4 +30,4 @@ $p2 = end($points);
 $p1 = prev($points);
 
 print_r('Alternative method is ' . round(1-$p2->differenceTime/$p1->differenceTime,4)*100 . "% faster\n");
-print_r('Array with ' . count($a) . ' elements having ' . count($result) . " unique elements\n");
+print_r('Generated test array with ' . count($a) . ' elements having ' . count($result) . " unique elements\n");

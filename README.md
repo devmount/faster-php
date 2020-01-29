@@ -19,7 +19,7 @@ Method:
 
 ```php
 // using
-array_keys(array_flip($a));
+array_keys(array_flip($array));
 // instead of
 array_unique($array);
 ```
