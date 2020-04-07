@@ -35,10 +35,10 @@ php test_array_unique.php
 
 Result:
 
-| method | time | memory |
-|--------|-----:|-------:|
-| `array_unique` | 787.31 ms | 230.00 MB |
-| `array_keys` `array_flip` | 434.03 ms | 0.00 KB |
+| method | time |
+|--------|-----:|
+| `array_unique` | 787.31 ms |
+| `array_keys` `array_flip` | 434.03 ms |
 
 The alternative approach is **1.8x** (44.87%) faster in this measurement. On average, it was ~1.5x (30%) faster. Tested on an array with 4166667 numeric elements having 3333333 unique entries.
 
@@ -61,10 +61,10 @@ php test_array_rand.php
 
 Result:
 
-| method | time | memory |
-|--------|-----:|-------:|
-| `array_rand` | 25.99 μs | 0.00 KB |
-| `mt_rand` | 0.95 μs | 0.00 KB |
+| method | time |
+|--------|-----:|
+| `array_rand` | 25.99 μs |
+| `mt_rand` | 0.95 μs |
 
 The alternative approach is **27.3x** (96.33%) faster in this measurement. On average, it was ~8x (87%) faster. Tested on an array with 5000000 random numeric elements.
 
@@ -87,10 +87,10 @@ php test_preg_match.php
 
 Result:
 
-| method | time | memory |
-|--------|-----:|-------:|
-| `preg_match` | 15.39 ms | 0.00 KB |
-| `ctype_alnum` | 2.06 ms | 0.00 KB |
+| method | time |
+|--------|-----:|
+| `preg_match` | 15.39 ms |
+| `ctype_alnum` | 2.06 ms |
 
 The alternative approach is **7.5x** (86.59%) faster in this measurement. On average, it was ~4x (76%) faster. Tested on an array of alphanumeric and non-alphanumeric strings with 104448 elements.
 
@@ -115,9 +115,9 @@ php test_string_replace.php
 
 Result:
 
-| method | time | memory |
-|--------|-----:|-------:|
-| `str_replace` | 676.59 ms | 0.00 KB |
-| `strtr` | 305.59 ms | 0.00 KB |
+| method | time |
+|--------|-----:|
+| `str_replace` | 676.59 ms |
+| `strtr` | 305.59 ms |
 
 The alternative approach is **2.2x** (54.83%) faster in this measurement. On average, it was ~2x (51%) faster. Tested on an array of random strings with 5000000 elements.
