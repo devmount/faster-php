@@ -14,7 +14,7 @@ Now you are ready to call the one of the test scripts presented below.
 
 ## List of methods
 
-### 1. Removing duplicates
+### 1. Removing duplicates in array
 
 Method:
 
@@ -38,7 +38,7 @@ Result:
 | `array_unique` | 787.31 ms | 230.00 MB |
 | `array_keys` `array_flip` | 434.03 ms | 0.00 KB |
 
-The alternative approach is **44.87 %** faster in this measurement. On average, it was 30 % faster.
+The alternative approach is **44.87 %** faster in this measurement. On average, it was 30 % faster. Tested on an array with 4166667 numeric elements having 3333333 unique entries.
 
 ### 2. Get random array element
 
@@ -64,4 +64,30 @@ Result:
 | `array_rand` | 25.99 μs | 0.00 KB |
 | `mt_rand` | 0.95 μs | 0.00 KB |
 
-The alternative approach is **96.33 %** faster in this measurement. On average, it was 85 % faster.
+The alternative approach is **96.33 %** faster in this measurement. On average, it was 85 % faster. Tested on an array with 5000000 random numeric elements.
+
+### Test for alpha-numeric characters
+
+Method:
+
+```php
+// using
+ctype_alnum($string);
+// instead of
+preg_match('/[a-zA-Z0-9]+/', $string);
+```
+
+Test:
+
+```bash
+php test_preg_match.php
+```
+
+Result:
+
+| method | time | memory |
+|--------|-----:|-------:|
+| `preg_match` | 8.65 ms | 0.00 KB |
+| `ctype_alnum` | 1.9 ms | 0.00 KB |
+
+The alternative approach is **78.01 %** faster in this measurement. On average, it was 70 % faster. Tested on an array of alphanumeric and non-alphanumeric strings with 104448 elements.
