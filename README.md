@@ -1,8 +1,10 @@
-# faster-php
+# faster-php ⚡
 
 Different approaches to improve PHP script performance
 
 ## Get started
+
+Make sure PHP 7.4 is installed. Then clone this repo and install dependencies:
 
 ```bash
 git clone https://github.com/devmount/faster-php
@@ -38,7 +40,7 @@ Result:
 | `array_unique` | 787.31 ms | 230.00 MB |
 | `array_keys` `array_flip` | 434.03 ms | 0.00 KB |
 
-The alternative approach is **44.87 %** faster in this measurement. On average, it was 30 % faster. Tested on an array with 4166667 numeric elements having 3333333 unique entries.
+The alternative approach is **1.8x** (44.87%) faster in this measurement. On average, it was ~1.5x (30%) faster. Tested on an array with 4166667 numeric elements having 3333333 unique entries.
 
 ### 2. Get random array element
 
@@ -64,7 +66,7 @@ Result:
 | `array_rand` | 25.99 μs | 0.00 KB |
 | `mt_rand` | 0.95 μs | 0.00 KB |
 
-The alternative approach is **96.33 %** faster in this measurement. On average, it was 85 % faster. Tested on an array with 5000000 random numeric elements.
+The alternative approach is **27.3x** (96.33%) faster in this measurement. On average, it was ~8x (87%) faster. Tested on an array with 5000000 random numeric elements.
 
 ### Test for alphanumeric characters
 
@@ -87,10 +89,10 @@ Result:
 
 | method | time | memory |
 |--------|-----:|-------:|
-| `preg_match` | 8.65 ms | 0.00 KB |
-| `ctype_alnum` | 1.9 ms | 0.00 KB |
+| `preg_match` | 15.39 ms | 0.00 KB |
+| `ctype_alnum` | 2.06 ms | 0.00 KB |
 
-The alternative approach is **78.01 %** faster in this measurement. On average, it was 70 % faster. Tested on an array of alphanumeric and non-alphanumeric strings with 104448 elements.
+The alternative approach is **7.5x** (86.59%) faster in this measurement. On average, it was ~4x (76%) faster. Tested on an array of alphanumeric and non-alphanumeric strings with 104448 elements.
 
 The same applies to `ctype_alpha()` (check for alphabetic characters) and `ctype_digit()` (check for numeric characters)
 
@@ -118,4 +120,4 @@ Result:
 | `str_replace` | 676.59 ms | 0.00 KB |
 | `strtr` | 305.59 ms | 0.00 KB |
 
-The alternative approach is **54.83 %** faster in this measurement. On average, it was 51 % faster. Tested on an array of random strings with 5000000 elements.
+The alternative approach is **2.2x** (54.83%) faster in this measurement. On average, it was ~2x (51%) faster. Tested on an array of random strings with 5000000 elements.
