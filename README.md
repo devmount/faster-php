@@ -66,7 +66,7 @@ Result:
 
 The alternative approach is **96.33 %** faster in this measurement. On average, it was 85 % faster. Tested on an array with 5000000 random numeric elements.
 
-### Test for alpha-numeric characters
+### Test for alphanumeric characters
 
 Method:
 
@@ -91,3 +91,31 @@ Result:
 | `ctype_alnum` | 1.9 ms | 0.00 KB |
 
 The alternative approach is **78.01 %** faster in this measurement. On average, it was 70 % faster. Tested on an array of alphanumeric and non-alphanumeric strings with 104448 elements.
+
+The same applies to `ctype_alpha()` (check for alphabetic characters) and `ctype_digit()` (check for numeric characters)
+
+### Replace substrings
+
+Method:
+
+```php
+// using
+strtr($string, 'a', 'b');
+// instead of
+str_replace('a', 'b', $string);
+```
+
+Test:
+
+```bash
+php test_string_replace.php
+```
+
+Result:
+
+| method | time | memory |
+|--------|-----:|-------:|
+| `str_replace` | 676.59 ms | 0.00 KB |
+| `strtr` | 305.59 ms | 0.00 KB |
+
+The alternative approach is **54.83 %** faster in this measurement. On average, it was 51 % faster. Tested on an array of random strings with 5000000 elements.
