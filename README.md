@@ -43,7 +43,7 @@ php test_array_unique.php
 Result:
 
 | method | execution time |
-|--------|-----:|
+|--------|---------------:|
 | `array_unique` | 787.31 ms |
 | `array_keys` `array_flip` | 434.03 ms |
 
@@ -69,13 +69,13 @@ php test_array_rand.php
 Result:
 
 | method | execution time |
-|--------|-----:|
+|--------|---------------:|
 | `array_rand` | 25.99 μs |
 | `mt_rand` | 0.95 μs |
 
 The alternative approach is **27.3x** (96.33%) faster in this measurement. On average, it was ~8x (87%) faster. Tested on an array with 5000000 random numeric elements.
 
-### Test for alphanumeric characters
+### 3. Test for alphanumeric characters
 
 Method:
 
@@ -95,7 +95,7 @@ php test_preg_match.php
 Result:
 
 | method | execution time |
-|--------|-----:|
+|--------|---------------:|
 | `preg_match` | 15.39 ms |
 | `ctype_alnum` | 2.06 ms |
 
@@ -103,7 +103,7 @@ The alternative approach is **7.5x** (86.59%) faster in this measurement. On ave
 
 The same applies to `ctype_alpha()` (check for alphabetic characters) and `ctype_digit()` (check for numeric characters)
 
-### Replace substrings
+### 4. Replace substrings
 
 Method:
 
@@ -123,7 +123,7 @@ php test_string_replace.php
 Result:
 
 | method | execution time |
-|--------|-----:|
+|--------|---------------:|
 | `str_replace` | 676.59 ms |
 | `strtr` | 305.59 ms |
 
