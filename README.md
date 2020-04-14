@@ -1,10 +1,10 @@
 # faster-php ⚡
 
-Different approaches to improve PHP script performance
+Different approaches to improve PHP script performance. For discussion or additional methods [create an issue](https://github.com/devmount/faster-php/issues/new) or comment on the corresponding [DEV article](https://dev.to/devmount/massively-boost-your-php-script-performance-3d71) (soon to be published).
 
 ## Get started
 
-Make sure PHP 7.4 is installed:
+To test the methods yourself, first make sure PHP 7.4 is installed:
 
 ```bash
 $ php -v
@@ -48,6 +48,8 @@ Result:
 | `array_keys` `array_flip` | 434.03 ms |
 
 The alternative approach is **1.8x** (44.87%) faster in this measurement. On average, it was ~1.5x (30%) faster. Tested on an array with 4166667 numeric elements having 3333333 unique entries.
+
+Note: This is only applicable for simple, one-dimensional arrays since `array_flip` replaces keys by values.
 
 ### 2. Get random array element
 
@@ -128,3 +130,20 @@ Result:
 | `strtr` | 305.59 ms |
 
 The alternative approach is **2.2x** (54.83%) faster in this measurement. On average, it was ~2x (51%) faster. Tested on an array of random strings with 5000000 elements.
+
+### Additional performance improvements
+
+Here are some additional points I integrated into my coding convention that I found to improve perfomance slightly (if applicable):
+
+- Prefer JSON over XML
+- Declare variables before, not in every iteration of the loop
+- Avoid function calls in the loop header (in `for ($i=0; $i<count($array); $i)` the `count()` method gets called in every iteration)
+- Unset memory consuming variables
+- Prefer select statement over multiple if statements
+- Prefer single quotes over double quotes (no parsing for in-quote variables if not needed)
+- Prefer require/include over require_once/include_once (ensure proper opcode caching)
+
+## Sources
+
+- <https://gist.github.com/bsalim/4442047>
+- <https://stackoverflow.com/questions/4195937/what-are-some-good-php-performance-tips>
