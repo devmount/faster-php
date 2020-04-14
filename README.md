@@ -1,6 +1,6 @@
 # faster-php ⚡
 
-Different approaches to improve PHP script performance. For discussion or additional methods [create an issue](https://github.com/devmount/faster-php/issues/new) or comment on the corresponding [DEV article](https://dev.to/devmount/massively-boost-your-php-script-performance-3d71).
+Different approaches to improve PHP script performance. For discussion or additional methods [create an issue](https://github.com/devmount/faster-php/issues/new) or comment on the corresponding [DEV article](https://dev.to/devmount/4-php-tricks-to-boost-script-performance-ol1).
 
 ## Get started
 
