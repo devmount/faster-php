@@ -1,11 +1,11 @@
 <?php
-// Require vender autoload
+// require vender autoload
 require_once('vendor/autoload.php');
 
-// Add namespace at the top
+// add namespace at the top
 use Performance\Performance;
 
-// "array_merge"
+// preparation
 $a = [...range('a','z'), ...range('a','9'), ...range('a','Z'), ...range('z','A')];
 for ($i=0; $i < 10; $i++) { 
 	$a = [...$a,...$a];
@@ -25,7 +25,7 @@ foreach ($a as $s) {
 }
 Performance::finish();
 
-// Finish all tasks and show test results
+// finish all tasks and show test results
 Performance::results();
 
 $export = Performance::export();

@@ -1,11 +1,11 @@
 <?php
-// Require vender autoload
+// require vender autoload
 require_once('vendor/autoload.php');
 
-// Add namespace at the top
+// add namespace at the top
 use Performance\Performance;
 
-// "array_unique"
+// preparation
 $max = 5000000;
 $a1 = range(1,$max,3);
 $a2 = range(1,$max,2);
@@ -21,7 +21,7 @@ Performance::point('array_keys:array_flip');
 $result = array_keys(array_flip($a));
 Performance::finish();
 
-// Finish all tasks and show test results
+// finish all tasks and show test results
 Performance::results();
 
 $export = Performance::export();

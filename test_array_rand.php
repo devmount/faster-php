@@ -1,11 +1,11 @@
 <?php
-// Require vender autoload
+// require vender autoload
 require_once('vendor/autoload.php');
 
-// Add namespace at the top
+// add namespace at the top
 use Performance\Performance;
 
-// "array_rand"
+// preparation
 $max = 5000000;
 $a = range(1, $max);
 
@@ -19,7 +19,7 @@ Performance::point('mt_rand');
 $result2 = $a[mt_rand(0, count($a) - 1)];
 Performance::finish();
 
-// Finish all tasks and show test results
+// finish all tasks and show test results
 Performance::results();
 
 $export = Performance::export();
