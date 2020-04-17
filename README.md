@@ -140,7 +140,6 @@ Here are some additional points I integrated into my coding convention that I fo
 - Avoid function calls in the loop header (in `for ($i=0; $i<count($array); $i)` the `count()` method gets called in every iteration)
 - Unset memory consuming variables
 - Prefer select statement over multiple if statements
-- Prefer single quotes over double quotes (no parsing for in-quote variables if not needed)
 - Prefer require/include over require_once/include_once (ensure proper opcode caching)
 
 ## Sources
