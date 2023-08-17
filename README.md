@@ -11,12 +11,12 @@ $ php -v
 PHP 7.4.4 (cli) (built: Mar 20 2020 13:47:17) ...
 ```
 
-Then clone this repo and install dependencies:
+Then clone this repo and install dependencies using [Composer](https://getcomposer.org):
 
 ```bash
 git clone https://github.com/devmount/faster-php
 cd faster-php
-php composer.phar install
+composer install
 ```
 
 Now you are ready to call the one of the test scripts presented below.
